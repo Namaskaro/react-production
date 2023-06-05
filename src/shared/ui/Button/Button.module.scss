@@ -22,3 +22,46 @@
     border: 1px solid var(--inverted-bg-color);
   }
 }
+
+.background {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.backgroundInverted {
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  border: none;
+}
+
+.square {
+  padding: 0;
+}
+
+.square.size_m {
+  width: var(--btn-size-width-m);
+  height: var(--btn-size-height-m);
+}
+
+.square.size_l {
+  width: var(--btn-size-width-l);
+  height: var(--btn-size-height-l);
+}
+
+.square.size_xl {
+  width: var(--btn-size-width-xl);
+  height: var(--btn-size-height-xl);
+}
+
+.size_m {
+  font: var(--font-m);
+}
+
+.size_l {
+  font: var(--font-l);
+}
+
+.size_xl {
+  font: var(--font-xl);
+}

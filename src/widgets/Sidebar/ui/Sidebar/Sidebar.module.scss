@@ -9,6 +9,32 @@
 
 .collapsed {
   width: var(--sidebar-width-collapsed);
+
+  .items {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .link {
+    justify-content: center;
+    padding: 4px;
+    border-radius: 5px;
+    &:hover {
+      background: var(--sidebar-link-bg);
+    }
+  }
+
+  .switchers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lang {
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
 
 .switchers {
@@ -21,4 +47,32 @@
 
 .lang {
   margin-left: 20px;
+}
+
+.collapseBtn {
+  position: absolute;
+  bottom: 40px;
+  right: -40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.link {
+  width: 50%;
+  margin-left: 20px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 10px;
+
+  svg {
+    stroke: var(--sidebar-icon-bg);
+  }
 }
