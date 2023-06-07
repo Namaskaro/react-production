@@ -1,22 +1,24 @@
-@import "reset";
-@import "variables/global";
-@import "themes/normal";
-@import "themes/dark";
+@import 'reset';
+@import 'variables/global';
+@import 'themes/normal';
+@import 'themes/dark';
+
+body {
+  font: var(--font-m);
+}
 
 .app {
-    font: var(--font-m);
-
-    background: var(--bg-color);
-    color: var(--primary-color);
-
-    min-height: 100vh;
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--primary-color);
 }
 
 .content-page {
-    display: flex;
+  display: flex;
 }
 
 .page-wrapper {
-    flex-grow: 1;
-    padding: 20px;
+  flex-grow: 1;
+  padding: 20px;
+  height: calc(100vh - var(--navbar-height));
 }

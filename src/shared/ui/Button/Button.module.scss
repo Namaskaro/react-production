@@ -10,17 +10,17 @@
 }
 
 .outline {
-  padding: 10px 15px;
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
-  background: none;
+  padding: 5px 10px;
+  border: 1px solid var(--btn-primary-color);
+  color: var(--btn-primary-color);
+  background: transparent;
   border-radius: 5px;
   transition: 0.2s ease all;
-  &:hover {
-    color: var(--bg-color);
-    background: var(--inverted-bg-color);
-    border: 1px solid var(--inverted-bg-color);
-  }
+  // &:hover {
+  //   color: var(--bg-color);
+  //   background: var(--inverted-bg-color);
+  //   border: 1px solid var(--inverted-bg-color);
+  // }
 }
 
 .background {
