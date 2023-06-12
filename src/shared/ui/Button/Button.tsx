@@ -9,6 +9,7 @@ export enum ThemeButton {
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
   SQUARE = 'square',
+  LOGIN = 'login',
 }
 
 export enum ButtonSize {
@@ -22,19 +23,24 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ThemeButton;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { className, children, theme, square, size, ...otherProps } = props;
+  const { className, children, theme, square, size, disabled, ...otherProps } = props;
 
   const mods = {
     [cls[theme]]: true,
     [cls.square]: square,
     [cls[size]]: true,
+    [cls.disabled]: disabled,
   };
 
   return (
-    <button className={classNames(cls.Button, mods, [className])} {...otherProps}>
+    <button
+      className={classNames(cls.Button, mods, [className])}
+      {...otherProps}
+      disabled={disabled}>
       {children}
     </button>
   );

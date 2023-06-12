@@ -3,6 +3,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Navbar } from './Navbar';
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof Navbar> = {
   title: 'widget/Navbar',
@@ -19,8 +20,29 @@ type Story = StoryObj<typeof Navbar>;
 export const Light: Story = {
   args: {},
 };
-Light.decorators = [RouterDecorator];
+Light.decorators = [
+  RouterDecorator,
+  StoreDecorator({
+    user: undefined,
+  }),
+];
 export const Dark: Story = {
   args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), RouterDecorator];
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  RouterDecorator,
+  StoreDecorator({
+    user: undefined,
+  }),
+];
+
+export const Auth: Story = {
+  args: {},
+};
+
+Auth.decorators = [
+  StoreDecorator({
+    user: { authData: {} },
+  }),
+];

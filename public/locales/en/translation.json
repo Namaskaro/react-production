@@ -10,5 +10,10 @@
   "Главная": "Main",
   "О нас": "About",
   "Короткий язык": "En",
-  "Войти": "Login"
+  "Войти": "Login",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+  "Выйти": "Logout",
+  "Имя": "Username",
+  "Пароль": "Password"
 }

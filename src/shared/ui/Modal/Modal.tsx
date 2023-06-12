@@ -9,15 +9,24 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose: () => void;
+  lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
 
 export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
-  const { className, children, isOpen, onClose } = props;
+  const { className, children, isOpen, onClose, lazy } = props;
+  const [isMounted, setIsMounted] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
   const timerRef = React.useRef<ReturnType<typeof setTimeout>>();
   const { theme } = useTheme();
+
+  React.useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
+
   const closeModal = React.useCallback(() => {
     if (onClose) {
       setIsClosing(true);
@@ -55,11 +64,15 @@ export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
-    [cls[theme]]: true,
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
+
   return (
     <Portal>
-      <div className={classNames(cls.Modal, mods, [className])}>
+      <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
         <div className={cls.overlay} onClick={closeModal}>
           <div className={cls.content} onClick={onContentClick}>
             {children}

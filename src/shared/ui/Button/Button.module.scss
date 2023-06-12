@@ -3,6 +3,10 @@
   color: var(--secondary-color);
 }
 
+.disabled {
+  opacity: 0.5;
+}
+
 .clear {
   border: none;
   background: none;
@@ -21,6 +25,15 @@
   //   background: var(--inverted-bg-color);
   //   border: 1px solid var(--inverted-bg-color);
   // }
+}
+
+.login {
+  padding: 6px 15px;
+  border: 1px solid var(--login-btn-bg);
+  color: var(--login-btn-bg);
+  background: transparent;
+  border-radius: 5px;
+  transition: 0.2s ease all;
 }
 
 .background {
